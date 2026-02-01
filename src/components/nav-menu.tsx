@@ -1,115 +1,48 @@
 "use client";
 
-import { siteConfig } from "@/lib/config";
+import { navLinks } from "@/lib/config/navigation";
 import { motion } from "motion/react";
-import React, { useRef, useState } from "react";
-
-interface NavItem {
-  name: string;
-  href: string;
-}
-
-const navs: NavItem[] = siteConfig.nav.links;
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useRef, useState, useEffect } from "react";
 
 export function NavMenu() {
   const ref = useRef<HTMLUListElement>(null);
   const [left, setLeft] = useState(0);
   const [width, setWidth] = useState(0);
   const [isReady, setIsReady] = useState(false);
-  const [activeSection, setActiveSection] = useState("hero");
-  const [isManualScroll, setIsManualScroll] = useState(false);
+  const pathname = usePathname();
 
-  React.useEffect(() => {
-    // Initialize with first nav item
-    const firstItem = ref.current?.querySelector(
-      `[href="#${navs[0].href.substring(1)}"]`,
+  // Get active link based on pathname
+  const getActiveLink = () => {
+    // Exact match first
+    const exactMatch = navLinks.find((link) => link.href === pathname);
+    if (exactMatch) return exactMatch.href;
+
+    // Check for nested routes (e.g., /services/ai-agents matches /services)
+    const nestedMatch = navLinks.find(
+      (link) => link.href !== "/" && pathname.startsWith(link.href)
+    );
+    if (nestedMatch) return nestedMatch.href;
+
+    // Default to home
+    return "/";
+  };
+
+  const activeHref = getActiveLink();
+
+  useEffect(() => {
+    // Update indicator position based on active link
+    const activeItem = ref.current?.querySelector(
+      `a[href="${activeHref}"]`
     )?.parentElement;
-    if (firstItem) {
-      const rect = firstItem.getBoundingClientRect();
-      setLeft(firstItem.offsetLeft);
+    if (activeItem) {
+      const rect = activeItem.getBoundingClientRect();
+      setLeft(activeItem.offsetLeft);
       setWidth(rect.width);
       setIsReady(true);
     }
-  }, []);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      // Skip scroll handling during manual click scrolling
-      if (isManualScroll) return;
-
-      const sections = navs.map((item) => item.href.substring(1));
-
-      // Find the section closest to viewport top
-      let closestSection = sections[0];
-      let minDistance = Infinity;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const distance = Math.abs(rect.top - 100); // Offset by 100px to trigger earlier
-          if (distance < minDistance) {
-            minDistance = distance;
-            closestSection = section;
-          }
-        }
-      }
-
-      // Update active section and nav indicator
-      setActiveSection(closestSection);
-      const navItem = ref.current?.querySelector(
-        `[href="#${closestSection}"]`,
-      )?.parentElement;
-      if (navItem) {
-        const rect = navItem.getBoundingClientRect();
-        setLeft(navItem.offsetLeft);
-        setWidth(rect.width);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isManualScroll]);
-
-  const handleClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    item: NavItem,
-  ) => {
-    e.preventDefault();
-
-    const targetId = item.href.substring(1);
-    const element = document.getElementById(targetId);
-
-    if (element) {
-      // Set manual scroll flag
-      setIsManualScroll(true);
-
-      // Immediately update nav state
-      setActiveSection(targetId);
-      const navItem = e.currentTarget.parentElement;
-      if (navItem) {
-        const rect = navItem.getBoundingClientRect();
-        setLeft(navItem.offsetLeft);
-        setWidth(rect.width);
-      }
-
-      // Calculate exact scroll position
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset
-
-      // Smooth scroll to exact position
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
-      // Reset manual scroll flag after animation completes
-      setTimeout(() => {
-        setIsManualScroll(false);
-      }, 500); // Adjust timing to match scroll animation duration
-    }
-  };
+  }, [activeHref]);
 
   return (
     <div className="w-full hidden md:block">
@@ -117,18 +50,16 @@ export function NavMenu() {
         className="relative mx-auto flex w-fit rounded-full h-11 px-2 items-center justify-center"
         ref={ref}
       >
-        {navs.map((item) => (
+        {navLinks.map((item) => (
           <li
-            key={item.name}
+            key={item.id}
             className={`z-10 cursor-pointer h-full flex items-center justify-center px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-              activeSection === item.href.substring(1)
+              activeHref === item.href
                 ? "text-primary"
                 : "text-primary/60 hover:text-primary"
             } tracking-tight`}
           >
-            <a href={item.href} onClick={(e) => handleClick(e, item)}>
-              {item.name}
-            </a>
+            <Link href={item.href}>{item.name}</Link>
           </li>
         ))}
         {isReady && (

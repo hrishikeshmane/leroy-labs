@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/sections/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
@@ -35,10 +34,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      {/* <head>
-        <Script src="https://unpkg.com/react-scan/dist/auto.global.js" />
-      </head> */}
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans bg-background`}
       >
@@ -48,12 +43,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="max-w-7xl mx-auto border-x relative">
-            <div className="block w-px h-full border-l border-border absolute top-0 left-6 z-10"></div>
-            <div className="block w-px h-full border-r border-border absolute top-0 right-6 z-10"></div>
-            <Navbar />
-            {children}
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

@@ -3,11 +3,12 @@
 import { Icons } from "@/components/icons";
 import { NavMenu } from "@/components/nav-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { siteConfig } from "@/lib/config";
+import { navLinks } from "@/lib/config/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const INITIAL_WIDTH = "70rem";
@@ -54,31 +55,22 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("hero");
+  const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = siteConfig.nav.links.map((item) =>
-        item.href.substring(1),
-      );
+  // Get active link based on pathname
+  const getActiveLink = () => {
+    const exactMatch = navLinks.find((link) => link.href === pathname);
+    if (exactMatch) return exactMatch.href;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
+    const nestedMatch = navLinks.find(
+      (link) => link.href !== "/" && pathname.startsWith(link.href)
+    );
+    if (nestedMatch) return nestedMatch.href;
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    return "/";
+  };
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const activeHref = getActiveLink();
 
   useEffect(() => {
     const unsubscribe = scrollY.on("change", (latest) => {
@@ -86,6 +78,11 @@ export function Navbar() {
     });
     return unsubscribe;
   }, [scrollY]);
+
+  // Close drawer on route change
+  useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [pathname]);
 
   const toggleDrawer = () => setIsDrawerOpen((prev) => !prev);
   const handleOverlayClick = () => setIsDrawerOpen(false);
@@ -122,7 +119,7 @@ export function Navbar() {
               <div className="flex items-center space-x-6">
                 <Link
                   className="bg-secondary h-8 hidden md:flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-fit px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12]"
-                  href="#contact"
+                  href="/contact"
                 >
                   Book a Call
                 </Link>
@@ -186,30 +183,22 @@ export function Navbar() {
                   variants={drawerMenuContainerVariants}
                 >
                   <AnimatePresence>
-                    {siteConfig.nav.links.map((item) => (
+                    {navLinks.map((item) => (
                       <motion.li
                         key={item.id}
                         className="p-2.5 border-b border-border last:border-b-0"
                         variants={drawerMenuVariants}
                       >
-                        <a
+                        <Link
                           href={item.href}
-                          onClick={(e) => {
-                            e.preventDefault();
-                            const element = document.getElementById(
-                              item.href.substring(1),
-                            );
-                            element?.scrollIntoView({ behavior: "smooth" });
-                            setIsDrawerOpen(false);
-                          }}
                           className={`underline-offset-4 hover:text-primary/80 transition-colors ${
-                            activeSection === item.href.substring(1)
+                            activeHref === item.href
                               ? "text-primary font-medium"
                               : "text-primary/60"
                           }`}
                         >
                           {item.name}
-                        </a>
+                        </Link>
                       </motion.li>
                     ))}
                   </AnimatePresence>
@@ -218,7 +207,7 @@ export function Navbar() {
                 {/* Action buttons */}
                 <div className="flex flex-col gap-2">
                   <Link
-                    href="#contact"
+                    href="/contact"
                     className="bg-secondary h-8 flex items-center justify-center text-sm font-normal tracking-wide rounded-full text-primary-foreground dark:text-secondary-foreground w-full px-4 shadow-[inset_0_1px_2px_rgba(255,255,255,0.25),0_3px_3px_-1.5px_rgba(16,24,40,0.06),0_1px_1px_rgba(16,24,40,0.08)] border border-white/[0.12] hover:bg-secondary/80 transition-all ease-out active:scale-95"
                   >
                     Book a Call
