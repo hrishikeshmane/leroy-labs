@@ -12,7 +12,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const INITIAL_WIDTH = "70rem";
-const MAX_WIDTH = "800px";
+const MAX_WIDTH = "900px";
 
 // Animation variants
 const overlayVariants = {
@@ -67,7 +67,7 @@ export function Navbar() {
     );
     if (nestedMatch) return nestedMatch.href;
 
-    return "/";
+    return null;
   };
 
   const activeHref = getActiveLink();

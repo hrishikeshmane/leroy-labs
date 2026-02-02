@@ -25,8 +25,8 @@ export function NavMenu() {
     );
     if (nestedMatch) return nestedMatch.href;
 
-    // Default to home
-    return "/";
+    // No match - don't highlight anything
+    return null;
   };
 
   const activeHref = getActiveLink();
@@ -57,7 +57,7 @@ export function NavMenu() {
               activeHref === item.href
                 ? "text-primary"
                 : "text-primary/60 hover:text-primary"
-            } tracking-tight`}
+            } tracking-tight whitespace-nowrap`}
           >
             <Link href={item.href}>{item.name}</Link>
           </li>

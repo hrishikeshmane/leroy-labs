@@ -141,7 +141,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Join Us */}
-      <section className="flex flex-col items-center justify-center gap-8 w-full p-14 bg-accent z-20">
+      {/* <section className="flex flex-col items-center justify-center gap-8 w-full p-14 bg-accent z-20">
         <div className="max-w-xl mx-auto flex flex-col items-center justify-center gap-2 mb-4">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
             Why Join Leroy Labs?
@@ -168,7 +168,7 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <SectionCTA
         title="Want to Join the Team?"

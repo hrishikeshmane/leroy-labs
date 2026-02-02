@@ -6,7 +6,7 @@ export const navLinks: NavLink[] = [
   { id: 3, name: "Solutions", href: "/solutions" },
   { id: 4, name: "Our Approach", href: "/approach" },
   { id: 5, name: "Case Studies", href: "/case-studies" },
-  { id: 6, name: "About", href: "/about" },
+  // { id: 6, name: "About", href: "/about" },
 ];
 
 export const footerLinks: FooterColumn[] = [

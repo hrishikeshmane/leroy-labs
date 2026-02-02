@@ -78,7 +78,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <PricingSection />
+      {/* <PricingSection /> */}
 
       <SectionCTA
         title="Ready to Build Something?"

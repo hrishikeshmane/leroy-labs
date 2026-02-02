@@ -22,6 +22,8 @@ interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   textColor?: string;
   fontSize?: number;
   fontWeight?: number | string;
+  letterSpacing?: number | string;
+  textPosition?: "center" | "bottom";
 }
 
 export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
@@ -36,6 +38,8 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   text = "",
   fontSize = 140,
   fontWeight = 600,
+  letterSpacing = 0,
+  textPosition = "center",
   ...props
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -74,8 +78,19 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         maskCtx.fillStyle = "white";
         maskCtx.font = `${fontWeight} ${fontSize}px "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
         maskCtx.textAlign = "center";
-        maskCtx.textBaseline = "middle";
-        maskCtx.fillText(text, width / (2 * dpr), height / (2 * dpr));
+
+        if (letterSpacing !== 0 && letterSpacing !== "") {
+          maskCtx.letterSpacing = typeof letterSpacing === "number"
+            ? `${letterSpacing}px`
+            : letterSpacing;
+        }
+
+        const yPosition = textPosition === "bottom"
+          ? height / dpr
+          : height / (2 * dpr);
+
+        maskCtx.textBaseline = textPosition === "bottom" ? "bottom" : "middle";
+        maskCtx.fillText(text, width / (2 * dpr), yPosition);
         maskCtx.restore();
       }
 
@@ -107,7 +122,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
         }
       }
     },
-    [memoizedColor, squareSize, gridGap, text, fontSize, fontWeight],
+    [memoizedColor, squareSize, gridGap, text, fontSize, fontWeight, letterSpacing, textPosition],
   );
 
   const setupCanvas = useCallback(
