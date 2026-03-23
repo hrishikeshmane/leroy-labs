@@ -171,10 +171,10 @@ export default function AboutPage() {
       </section> */}
 
       <SectionCTA
-        title="Want to Join the Team?"
-        description="We're always looking for exceptional engineers who want to build AI that matters."
-        primaryButton={{ text: "View Open Roles", href: "/careers" }}
-        secondaryButton={{ text: "Get in Touch", href: "/contact" }}
+        title="Ready to Build Something Great?"
+        description="Let's discuss how our team can help transform your business with AI."
+        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        secondaryButton={{ text: "View Case Studies", href: "/case-studies" }}
       />
     </main>
   );

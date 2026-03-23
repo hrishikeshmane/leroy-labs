@@ -34,7 +34,7 @@ export function FooterSection() {
           </div>
         </div>
         <div className="pt-5 md:w-1/2">
-          <div className="flex flex-col items-start justify-start md:flex-row md:items-center md:justify-between gap-y-5 lg:pl-10">
+          <div className="flex flex-col items-start justify-start md:flex-row md:items-start md:justify-end gap-x-16 gap-y-5 lg:pl-10">
             {footerLinks.map((column, columnIndex) => (
               <ul key={columnIndex} className="flex flex-col gap-y-2">
                 <li className="mb-2 text-sm font-semibold text-primary">

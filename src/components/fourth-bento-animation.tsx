@@ -16,15 +16,15 @@ interface BoxConfig {
 
 const boxConfigs: BoxConfig[] = [
   {
-    title: "Bento grid",
+    title: "Customer Support Agent",
     className: "bg-secondary text-white",
   },
   {
-    title: "Landing Page",
+    title: "Data Pipeline",
     className: "bg-secondary/40 text-white",
   },
   {
-    title: "Add Task",
+    title: "Add Workflow",
     className:
       "bg-secondary/20 border border-secondary border-dashed text-secondary",
   },

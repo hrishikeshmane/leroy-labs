@@ -12,7 +12,7 @@ export const contactHero: PageHeroConfig = {
 };
 
 export const contactInfo = {
-  email: "hello@leroylabs.io",
+  email: "hi@leroylabs.io",
   calendlyLink: "https://cal.com/leroylabs",
 };
 

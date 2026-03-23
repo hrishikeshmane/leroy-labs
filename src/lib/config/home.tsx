@@ -250,9 +250,9 @@ export const featureSectionConfig: FeatureSectionConfig = {
 };
 
 export const bentoSectionConfig: BentoSectionConfig = {
-  title: "What We Build",
+  title: "Our Core Capabilities",
   description:
-    "AI-native products and agentic workflows that transform how your business operates.",
+    "End-to-end AI solutions — from intelligent apps and autonomous agents to seamless integrations.",
   items: [
     {
       id: 1,
@@ -264,9 +264,9 @@ export const bentoSectionConfig: BentoSectionConfig = {
     {
       id: 2,
       content: <SecondBentoAnimation />,
-      title: "Custom AI Agents",
+      title: "Integration Architecture",
       description:
-        "Autonomous agents that handle complex workflows: customer support, data analysis, document processing, and beyond.",
+        "Connect your tools, data sources, and systems into a unified AI-powered ecosystem that actually works together.",
     },
     {
       id: 3,
@@ -285,9 +285,9 @@ export const bentoSectionConfig: BentoSectionConfig = {
     {
       id: 4,
       content: <FourthBentoAnimation once={false} />,
-      title: "Integration Architecture",
+      title: "Custom AI Agents and Workflows",
       description:
-        "Connect your tools, data sources, and systems into a unified AI-powered ecosystem that actually works together.",
+        "Autonomous agents that handle complex workflows: customer support, data analysis, document processing, and beyond.",
     },
   ],
 };

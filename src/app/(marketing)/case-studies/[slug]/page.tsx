@@ -100,12 +100,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </section>
 
       {/* Hero Image */}
-      <section className="w-full">
-        <div className="relative aspect-video max-h-[500px] overflow-hidden">
+      <section className="w-full flex items-center justify-center">
+        <div className="relative aspect-video max-h-[500px] w-full overflow-hidden">
           <img
             src={study.image}
             alt={study.title}
-            className="object-cover w-full h-full"
+            className="object-cover object-center w-full h-full"
           />
         </div>
       </section>

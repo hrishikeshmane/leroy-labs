@@ -9,16 +9,7 @@ export const navLinks: NavLink[] = [
 ];
 
 export const footerLinks: FooterColumn[] = [
-  {
-    title: "Services",
-    links: [
-      { id: 1, title: "AI Agent Development", url: "/services/ai-agents" },
-      { id: 2, title: "AI-Native Products", url: "/services" },
-      { id: 3, title: "Process Automation", url: "/services" },
-      { id: 4, title: "Consulting", url: "/services" },
-    ],
-  },
-  {
+{
     title: "Company",
     links: [
       { id: 5, title: "About", url: "/about" },

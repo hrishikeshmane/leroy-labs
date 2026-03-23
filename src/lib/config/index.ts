@@ -28,7 +28,7 @@ export const siteConfig = {
     "Agentic Workflows",
   ],
   links: {
-    email: "hello@leroylabs.io",
+    email: "hi@leroylabs.io",
     twitter: "https://twitter.com/leroylabs",
     linkedin: "https://linkedin.com/company/leroylabs",
     github: "https://github.com/leroylabs",

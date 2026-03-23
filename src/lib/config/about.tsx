@@ -8,8 +8,8 @@ export const aboutHero: PageHeroConfig = {
     "We're a team of engineers and researchers from top tech companies and research labs who got tired of seeing AI projects fail. So we built a different way.",
   variant: "centered",
   cta: {
-    primary: { text: "Join the Team", href: "/careers" },
-    secondary: { text: "Work With Us", href: "/contact" },
+    primary: { text: "Work With Us", href: "/contact" },
+    secondary: { text: "View Case Studies", href: "/case-studies" },
   },
 };
 
