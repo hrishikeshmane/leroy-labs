@@ -3,8 +3,6 @@ export * from "./navigation";
 export * from "./home";
 export * from "./services";
 export * from "./solutions";
-// Only export approachConfig to avoid conflicts with solutions exports
-export { approachConfig } from "./approach";
 export * from "./case-studies";
 export * from "./about";
 export * from "./contact";
