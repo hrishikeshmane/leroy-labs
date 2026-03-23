@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { PageHero, SectionCTA } from "@/components/sections/shared";
 import { SectionHeader } from "@/components/section-header";
 import { servicesConfig } from "@/lib/config/services";
-import { PricingSection } from "@/components/sections/pricing-section";
 import { Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
 

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { PageHero, SectionCTA } from "@/components/sections/shared";
 import { SectionHeader } from "@/components/section-header";
 import { aboutConfig } from "@/lib/config/about";
-import { Linkedin, Twitter, Check } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
