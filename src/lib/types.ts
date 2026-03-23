@@ -193,6 +193,20 @@ export interface ServicesConfig {
 }
 
 // Solutions by Industry
+export interface ProcessStep {
+  id: number;
+  title: string;
+  description: string;
+  details: string[];
+  icon?: ReactNode;
+}
+
+export interface ComparisonRow {
+  aspect: string;
+  traditional: string;
+  forwardDeployed: string;
+}
+
 export interface IndustrySolution {
   id: number;
   name: string;
@@ -205,6 +219,19 @@ export interface IndustrySolution {
 export interface SolutionsConfig {
   hero: PageHeroConfig;
   industries: IndustrySolution[];
+  comparison: {
+    title: string;
+    rows: ComparisonRow[];
+  };
+  process: {
+    title: string;
+    description: string;
+    steps: ProcessStep[];
+  };
+  deliverables: {
+    title: string;
+    items: string[];
+  };
 }
 
 // Case Studies
@@ -301,34 +328,3 @@ export interface BlogConfig {
   posts: BlogPost[];
 }
 
-// Approach
-export interface ProcessStep {
-  id: number;
-  title: string;
-  description: string;
-  details: string[];
-  icon?: ReactNode;
-}
-
-export interface ComparisonRow {
-  aspect: string;
-  traditional: string;
-  forwardDeployed: string;
-}
-
-export interface ApproachConfig {
-  hero: PageHeroConfig;
-  comparison: {
-    title: string;
-    rows: ComparisonRow[];
-  };
-  process: {
-    title: string;
-    description: string;
-    steps: ProcessStep[];
-  };
-  deliverables: {
-    title: string;
-    items: string[];
-  };
-}
