@@ -7,6 +7,7 @@ export * from "./case-studies";
 export * from "./about";
 export * from "./contact";
 export * from "./blog";
+export * from "./careers";
 
 // Import for siteConfig compatibility
 import { homeConfig, BLUR_FADE_DELAY, Highlight } from "./home";
