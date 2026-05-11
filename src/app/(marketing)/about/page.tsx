@@ -174,7 +174,7 @@ export default function AboutPage() {
       <SectionCTA
         title="Ready to Build Something Great?"
         description="Let's discuss how our team can help transform your business with AI."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
         secondaryButton={{ text: "View Case Studies", href: "/case-studies" }}
       />
     </main>

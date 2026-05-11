@@ -61,7 +61,7 @@ export default function ContactPage() {
                 <Link
                   href={
                     contactConfig.contactInfo.calendlyLink ||
-                    "https://cal.com/leroylabs"
+                    "https://calendly.com/hi-leroylabs/30min"
                   }
                   target="_blank"
                   rel="noopener noreferrer"

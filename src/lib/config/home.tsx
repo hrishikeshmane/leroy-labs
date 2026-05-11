@@ -63,7 +63,7 @@ export const heroConfig: HeroConfig = {
   cta: {
     primary: {
       text: "Book a Call",
-      href: "/contact",
+      href: "https://calendly.com/hi-leroylabs/30min",
     },
     secondary: {
       text: "Our Work",
@@ -341,7 +341,7 @@ export const pricingConfig: PricingConfig = {
     },
     {
       name: "Embedded",
-      href: "/contact",
+      href: "https://calendly.com/hi-leroylabs/30min",
       price: "Custom",
       period: "month",
       yearlyPrice: "Custom",
@@ -439,7 +439,7 @@ export const ctaSectionConfig: CTASectionConfig = {
   backgroundImage: "/agent-cta-background.png",
   button: {
     text: "Book a Discovery Call",
-    href: "https://cal.com/leroylabs",
+    href: "https://calendly.com/hi-leroylabs/30min",
   },
   subtext:
     "30-minute call to explore where custom software, automation, or AI can move your business.",

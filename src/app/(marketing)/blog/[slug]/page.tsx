@@ -201,7 +201,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <SectionCTA
         title="Want to work with us?"
         description="Let's talk about the software, automation, or AI work that would move your business."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
         secondaryButton={{ text: "More Writing", href: "/blog" }}
         variant="accent"
       />

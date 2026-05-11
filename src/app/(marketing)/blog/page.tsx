@@ -173,7 +173,7 @@ export default function BlogPage() {
       <SectionCTA
         title="Want to Work With Us?"
         description="Let's talk about what would move your business — software, automation, or AI."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
         variant="accent"
       />
     </main>

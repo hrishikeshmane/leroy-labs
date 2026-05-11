@@ -308,7 +308,7 @@ export default function AIAgentsPage() {
       <SectionCTA
         title="Ready to Build Your Agent?"
         description="Let's discuss your use case and design an agent that delivers real value."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
         secondaryButton={{ text: "View Case Studies", href: "/case-studies" }}
       />
     </main>
