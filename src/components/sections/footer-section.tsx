@@ -12,8 +12,32 @@ export function FooterSection() {
   const tablet = useMediaQuery("(max-width: 1024px)");
 
   return (
-    <footer id="footer" className="w-full pb-0 border-t border-border">
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between p-10">
+    <footer
+      id="footer"
+      className="w-full pb-0 border-t border-border relative overflow-hidden min-h-[480px] md:min-h-[560px]"
+    >
+      {/* Flickering pixel grid — sits behind all footer content */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 mx-6">
+          <FlickeringGrid
+            text={tablet ? "Leroy Labs" : "Build. Automate. Ship."}
+            fontSize={tablet ? 90 : 120}
+            className="h-full w-full"
+            squareSize={2}
+            gridGap={tablet ? 2 : 3}
+            color="#6B7280"
+            maxOpacity={0.3}
+            flickerChance={0.1}
+            letterSpacing="-0.05em"
+            textPosition="bottom"
+            fontWeight={500}
+          />
+        </div>
+        {/* Top fade keeps the footer readable where the link columns sit */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-transparent to-40%" />
+      </div>
+
+      <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between p-10">
         <div className="flex flex-col items-start justify-start gap-y-5 max-w-xs mx-0">
           <Link href="/" className="flex items-center gap-2">
             <Icons.logo className="size-8" />
@@ -22,16 +46,6 @@ export function FooterSection() {
           <p className="tracking-tight text-muted-foreground font-medium">
             {siteConfig.description}
           </p>
-          <div className="flex items-center gap-2 dark:hidden">
-            <Icons.soc2 className="size-12" />
-            <Icons.hipaa className="size-12" />
-            <Icons.gdpr className="size-12" />
-          </div>
-          <div className="dark:flex items-center gap-2 hidden">
-            <Icons.soc2Dark className="size-12" />
-            <Icons.hipaaDark className="size-12" />
-            <Icons.gdprDark className="size-12" />
-          </div>
         </div>
         <div className="pt-5 md:w-1/2">
           <div className="flex flex-col items-start justify-start md:flex-row md:items-start md:justify-end gap-x-16 gap-y-5 lg:pl-10">
@@ -54,24 +68,6 @@ export function FooterSection() {
               </ul>
             ))}
           </div>
-        </div>
-      </div>
-      <div className="w-full h-80 md:h-96 relative mt-10 z-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-background/20 to-background z-10 from-20%" />
-        <div className="absolute inset-0 mx-6">
-          <FlickeringGrid
-            text={tablet ? "Leroy Labs" : "Build AI That Works"}
-            fontSize={tablet ? 90 : 120}
-            className="h-full w-full"
-            squareSize={2}
-            gridGap={tablet ? 2 : 3}
-            color="#6B7280"
-            maxOpacity={0.3}
-            flickerChance={0.1}
-            letterSpacing="-0.05em"
-            textPosition="bottom"
-            fontWeight={500}
-          />
         </div>
       </div>
     </footer>

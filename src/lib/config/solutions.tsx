@@ -17,9 +17,9 @@ import {
 
 export const solutionsHero: PageHeroConfig = {
   badge: "Industry Solutions",
-  title: "AI Built for Your Industry",
+  title: "Built for Your Industry",
   description:
-    "Every industry has unique challenges, regulations, and opportunities. We bring deep domain expertise to build AI solutions that work in the real world.",
+    "Every industry has its own workflows, data, and constraints. We build the custom software, automations, and AI integrations that make sense for yours.",
   variant: "centered",
   cta: {
     primary: { text: "Discuss Your Industry", href: "/contact" },
@@ -32,65 +32,61 @@ export const industries: IndustrySolution[] = [
     id: 1,
     name: "Financial Services",
     description:
-      "Automate compliance workflows, enhance risk assessment, and build intelligent customer experiences while meeting regulatory requirements.",
+      "Custom operational software, automated compliance workflows, and intelligent customer experiences built to fit your regulatory environment.",
     icon: <Building2 className="size-6" />,
     useCases: [
-      "Automated KYC/AML document processing",
-      "Fraud detection and prevention",
-      "Customer service automation",
-      "Risk assessment and scoring",
-      "Regulatory reporting automation",
-      "Portfolio analysis and insights",
+      "KYC/AML document processing automation",
+      "Internal operations tools and dashboards",
+      "Fraud detection pipelines",
+      "Customer service automation (with AI where it fits)",
+      "Regulatory reporting workflows",
+      "Portfolio analytics and data integration",
     ],
-    caseStudySlug: "fintech-customer-service",
   },
   {
     id: 2,
     name: "Healthcare & Life Sciences",
     description:
-      "HIPAA-compliant AI solutions that streamline patient care, accelerate research, and reduce administrative burden.",
+      "Patient-facing and internal software built alongside your existing compliance program. We work within the HIPAA-aware frameworks your organization already operates under.",
     icon: <Heart className="size-6" />,
     useCases: [
-      "Patient intake automation",
+      "Patient intake and scheduling automation",
       "Clinical documentation assistance",
       "Prior authorization processing",
       "Medical record summarization",
       "Research data extraction",
-      "Appointment scheduling optimization",
+      "Custom provider-facing applications",
     ],
-    caseStudySlug: "healthtech-intake",
   },
   {
     id: 3,
     name: "E-commerce & Retail",
     description:
-      "Personalized shopping experiences, intelligent inventory management, and customer support automation that drives revenue.",
+      "Custom storefronts, inventory and operations automation, and customer experiences that scale — with AI-assisted personalization where it drives real revenue.",
     icon: <ShoppingCart className="size-6" />,
     useCases: [
+      "Custom Shopify, Next.js, and mobile storefronts",
+      "Inventory and fulfillment automation",
+      "Customer support workflows",
       "Product recommendation engines",
-      "Customer support chatbots",
-      "Inventory demand forecasting",
-      "Dynamic pricing optimization",
-      "Content generation at scale",
-      "Return fraud detection",
+      "Dynamic pricing and merchandising",
+      "Return and fraud detection",
     ],
-    caseStudySlug: "ecommerce-personalization",
   },
   {
     id: 4,
     name: "SaaS & Technology",
     description:
-      "Add intelligent features to your product, automate internal operations, and scale your team's capabilities with AI.",
+      "Ship product features, automate internal operations, and add intelligent capabilities to your platform — without burning your in-house team out.",
     icon: <Briefcase className="size-6" />,
     useCases: [
-      "AI-powered product features",
-      "Automated code review",
-      "Customer onboarding automation",
-      "Support ticket triage",
-      "Usage analytics and insights",
+      "Core product feature development",
+      "Internal ops and support automation",
+      "Customer onboarding workflows",
+      "AI-powered product features and agents",
+      "Usage analytics and data pipelines",
       "Content and documentation generation",
     ],
-    caseStudySlug: "saas-features",
   },
 ];
 
@@ -189,7 +185,7 @@ export const processSteps: ProcessStep[] = [
 export const deliverables = {
   title: "What You Get",
   items: [
-    "Production-ready AI systems deployed to your infrastructure",
+    "Production-ready software deployed to your infrastructure",
     "Clean, documented codebase with full IP transfer",
     "Trained team members who can maintain and extend the system",
     "Monitoring dashboards and alerting",

@@ -4,7 +4,7 @@ export const contactHero: PageHeroConfig = {
   badge: "Contact Us",
   title: "Let's Build Something Together",
   description:
-    "Ready to explore how AI can transform your business? Book a discovery call to discuss your challenges and opportunities.",
+    "Ready to ship a product, automate a workflow, or integrate AI where it matters? Book a discovery call and we'll dig into what would move your business.",
   variant: "centered",
   cta: {
     primary: { text: "Book a Call", href: "https://cal.com/leroylabs" },
@@ -27,7 +27,7 @@ export const contactProcessSteps = [
     id: 2,
     title: "Technical Deep-Dive",
     description:
-      "If there's a match, we schedule a technical session to map your workflows and identify high-impact automation opportunities.",
+      "If there's a match, we schedule a technical session to map your workflows and identify the highest-leverage work — software, automation, or AI.",
   },
   {
     id: 3,

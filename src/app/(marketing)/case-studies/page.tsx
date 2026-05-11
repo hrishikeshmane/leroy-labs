@@ -9,7 +9,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "See how we've helped companies across industries build AI systems that deliver measurable impact.",
+    "A sample of products, platforms, and tools Leroy Labs has shipped for clients — live, in production, in front of real users.",
+  alternates: { canonical: "/case-studies" },
 };
 
 export default function CaseStudiesPage() {
@@ -66,18 +67,20 @@ export default function CaseStudiesPage() {
                     <p className="text-muted-foreground text-sm line-clamp-2">
                       {study.summary}
                     </p>
-                    <div className="flex gap-6 mt-auto pt-4">
-                      {study.metrics.slice(0, 3).map((metric, i) => (
-                        <div key={i}>
-                          <div className="text-xl font-semibold text-secondary tracking-tighter">
-                            {metric.value}
+                    {study.metrics && study.metrics.length > 0 && (
+                      <div className="flex gap-6 mt-auto pt-4">
+                        {study.metrics.slice(0, 3).map((metric, i) => (
+                          <div key={i}>
+                            <div className="text-xl font-semibold text-secondary tracking-tighter">
+                              {metric.value}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              {metric.label}
+                            </div>
                           </div>
-                          <div className="text-xs text-muted-foreground">
-                            {metric.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                        ))}
+                      </div>
+                    )}
                     <div className="flex items-center gap-1 text-sm font-medium text-secondary mt-4 group-hover:gap-2 transition-all">
                       Read Case Study
                       <ArrowRight className="size-4" />
@@ -95,10 +98,10 @@ export default function CaseStudiesPage() {
         <section className="flex flex-col items-center justify-center gap-8 w-full p-14 bg-accent z-20">
           <div className="max-w-xl mx-auto flex flex-col items-center justify-center gap-2 mb-4">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-center text-balance">
-              More Success Stories
+              More Work
             </h2>
             <p className="text-muted-foreground text-center text-balance font-medium">
-              Explore our full portfolio of AI implementations
+              Explore more of what we&apos;ve shipped for clients
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
@@ -139,8 +142,8 @@ export default function CaseStudiesPage() {
       )}
 
       <SectionCTA
-        title="Ready to Be Our Next Success Story?"
-        description="Let's discuss how AI can transform your business."
+        title="Ready to Be Our Next Client?"
+        description="Let's talk about the software, automation, or AI work that would move your business."
         primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
       />
     </main>

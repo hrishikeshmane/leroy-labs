@@ -16,6 +16,7 @@ export const footerLinks: FooterColumn[] = [
       { id: 6, title: "Case Studies", url: "/case-studies" },
       { id: 7, title: "Blog", url: "/blog" },
       { id: 8, title: "Contact", url: "/contact" },
+      { id: 9, title: "Careers", url: "/careers" },
     ],
   },
   {

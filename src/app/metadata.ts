@@ -2,19 +2,27 @@ import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
+  title: {
+    default: `${siteConfig.name} — Custom Software, Business Automation & AI Integration`,
+    template: `%s — ${siteConfig.name}`,
+  },
   description: siteConfig.description,
   keywords: [
     "Leroy Labs",
-    "AI Software Development",
+    "Software Consultancy",
+    "Custom Software Development",
+    "Business Automation",
+    "Workflow Automation",
+    "Process Automation",
+    "AI Integration",
     "AI Agents",
-    "Custom Automation",
-    "Forward Deployment",
-    "AI-Native Products",
-    "Agentic Workflows",
-    "AI Consulting",
-    "Machine Learning",
-    "Enterprise AI",
+    "Web App Development",
+    "Mobile App Development",
+    "Next.js Development",
+    "System Integration",
+    "API Integration",
+    "Forward-Deployed Engineering",
+    "Software Studio",
   ],
   authors: [
     {

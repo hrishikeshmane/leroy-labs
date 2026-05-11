@@ -9,7 +9,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Insights on AI engineering, agent development, and building production AI systems that work.",
+    "Field notes from Leroy Labs on software engineering, business automation, and practical AI integration.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {
@@ -99,7 +100,7 @@ export default function BlogPage() {
             Latest Articles
           </h2>
           <p className="text-muted-foreground text-center text-balance font-medium">
-            Deep dives into AI engineering and best practices
+            Field notes on engineering, automation, and practical AI
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto w-full">
@@ -171,7 +172,7 @@ export default function BlogPage() {
 
       <SectionCTA
         title="Want to Work With Us?"
-        description="Let's discuss how AI can transform your business."
+        description="Let's talk about what would move your business — software, automation, or AI."
         primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
         variant="accent"
       />

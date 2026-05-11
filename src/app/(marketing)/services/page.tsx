@@ -2,18 +2,38 @@ import { Metadata } from "next";
 import { PageHero, SectionCTA } from "@/components/sections/shared";
 import { SectionHeader } from "@/components/section-header";
 import { servicesConfig } from "@/lib/config/services";
+import { JsonLd } from "@/components/json-ld";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
+import { siteConfig } from "@/lib/site";
 import { Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI engineering services including custom AI agents, AI-native products, process automation, and strategic consulting.",
+    "Custom software development, business automation, AI integration, system integration, and forward-deployed engineering teams — shipped by Leroy Labs.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
   return (
     <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: siteConfig.url },
+          { name: "Services", url: `${siteConfig.url}/services` },
+        ])}
+      />
+      {servicesConfig.services.map((service) => (
+        <JsonLd
+          key={service.id}
+          data={serviceSchema({
+            name: service.title,
+            description: service.description,
+            url: `${siteConfig.url}${service.href}`,
+          })}
+        />
+      ))}
       <PageHero config={servicesConfig.hero} />
 
       {/* Services Bento Grid */}
@@ -28,7 +48,7 @@ export default function ServicesPage() {
               What We Build
             </h2>
             <p className="text-muted-foreground text-center text-balance font-medium">
-              From autonomous agents to full-stack AI products
+              Custom software, automation, and AI integration — shipped end-to-end
             </p>
           </SectionHeader>
 
@@ -81,7 +101,7 @@ export default function ServicesPage() {
 
       <SectionCTA
         title="Ready to Build Something?"
-        description="Let's discuss how AI can transform your business."
+        description="Let's talk about the software, automation, or AI work that would move your business."
         primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
         secondaryButton={{ text: "View Case Studies", href: "/case-studies" }}
         variant="accent"
