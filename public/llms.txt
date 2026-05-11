@@ -1,0 +1,73 @@
+# Leroy Labs
+
+> Leroy Labs is a forward-deployed software studio that builds custom products, automates business workflows, and integrates AI where it creates real leverage. We embed senior engineers with your team and ship production code — not decks, not contractors, not rent-a-devs.
+
+Website: https://leroylabs.io
+Contact: https://leroylabs.io/contact
+Book a call: https://cal.com/leroylabs
+Email: hi@leroylabs.io
+
+## What we do
+
+All services live at [leroylabs.io/services](https://leroylabs.io/services).
+
+- **Custom Software Development** — Web and mobile products built end-to-end (Next.js, React, React Native, Node.js, Python). From MVP to App Store to scale.
+- **Business Process Automation** — Backend workers, integrations, document pipelines, and automations that eliminate manual work.
+- **AI Integration & Agents** — LLM-powered product features, autonomous agents with tool use, RAG pipelines, and evaluation infrastructure. See [leroylabs.io/services/ai-agents](https://leroylabs.io/services/ai-agents).
+- **System & API Integration** — Salesforce, HubSpot, NetSuite, Stripe, Shopify, data warehouse sync, legacy system modernization.
+- **Forward-Deployed Engineering Teams** — Senior engineers who embed with your team on-site or remotely and ship code from day one.
+- **Technical Strategy & Discovery** — Architecture review, automation opportunity assessment, AI readiness, scoped discovery sprints, actionable roadmaps.
+
+## Industries we serve
+
+- Financial Services — operational software, compliance workflows, customer service automation
+- Healthcare & Life Sciences — patient intake, clinical documentation, provider-facing tools
+- E-commerce & Retail — custom storefronts, fulfillment automation, recommendation engines
+- SaaS & Technology — core product features, internal ops automation, AI-powered features
+
+## Our Work (recent clients)
+
+- [Styleit](https://styleit.fit) — AI virtual try-on Chrome extension. Shipped the browser extension, backend, and inference pipeline end-to-end.
+- [jobseekr](https://jobseekr.io) — Job-hunting platform for senior engineers targeting FAANG roles. Real-time listings, personalized matching, resume analysis.
+- [Visa Architect](https://visarchitect.com) — Marketing and consultation site for an EB-1A immigration practice. Conversion-focused with detailed visa-category content.
+- [Open Atlas](https://theopenatlas.org) — Community platform for high-skilled immigrants in the U.S. Newsletter, webinars, conference, national press coverage.
+
+## Engagement models
+
+- **Project** — Scoped deliverables, 2–12 week timeline, full IP transfer. Best for specific products or automations.
+- **Embedded** — Engineers embedded with your team, ongoing development, direct Slack access. Best for continuous work.
+- **Enterprise** — Dedicated allocation, custom SLAs, multi-project capacity, on-site deployment. For large-scale engagements.
+
+## FAQ
+
+### How is Leroy Labs different from a typical dev shop or consultancy?
+We're builders, not advisors. Our engineers embed directly with your team and ship production code. We don't hand off PowerPoint decks or rent you a junior developer. We learn your business deeply and deliver working software, automations, and AI features you actually own.
+
+### What does "forward deployment" mean?
+Our engineers work alongside your team — on-site or as deeply integrated remote collaborators. We join your Slack, attend your standups, and commit to your repos.
+
+### What kinds of projects do you take on?
+Three buckets. (1) Custom software — web and mobile products from MVP to scale. (2) Business automation — backend workers, integrations, document pipelines, scheduled jobs, and workflow systems. (3) AI integration — LLM-powered features and autonomous agents. Most engagements are a mix.
+
+### Do I need an AI use case to work with you?
+No. Plenty of our work has no AI in it at all — shipping a product, automating a finance workflow, integrating a CRM with a data warehouse. We recommend AI when it's the right tool; we skip it when it isn't.
+
+### How long does a typical engagement last?
+Project-based work typically runs 4–12 weeks depending on scope. Embedded engagements are ongoing partnerships that scale up or down based on your needs.
+
+### Do you work with early-stage startups?
+Yes. We work with companies from seed stage to enterprise. For startups, we often ship initial MVPs, core product features, or automations that let a small team punch above its weight.
+
+### What about data privacy and security?
+We sign NDAs and DPAs as standard, operate under least-privilege access, and work within the security frameworks you already have in place. For regulated environments, we build software alongside client-provided compliance programs.
+
+## Links
+
+- [Services](https://leroylabs.io/services)
+- [Industry Solutions](https://leroylabs.io/solutions)
+- [Case Studies](https://leroylabs.io/case-studies)
+- [About](https://leroylabs.io/about)
+- [Blog](https://leroylabs.io/blog)
+- [Contact](https://leroylabs.io/contact)
+- [LinkedIn](https://linkedin.com/company/leroylabs)
+- [X / Twitter](https://x.com/leroylabs)

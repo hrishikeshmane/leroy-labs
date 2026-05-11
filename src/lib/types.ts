@@ -34,6 +34,17 @@ export interface CompanyLogo {
   id: number;
   name: string;
   logo: ReactNode;
+  href?: string;
+}
+
+// Our Work showcase (client portfolio)
+export interface OurWorkItem {
+  id: number;
+  name: string;
+  tagline: string;
+  description: string;
+  href: string;
+  image: string;
 }
 
 // Feature section
@@ -240,12 +251,12 @@ export interface CaseStudy {
   title: string;
   client: string;
   industry: string;
-  duration: string;
+  duration?: string;
   summary: string;
-  challenge: string;
-  solution: string;
-  results: string[];
-  metrics: { label: string; value: string }[];
+  challenge?: string;
+  solution?: string;
+  results?: string[];
+  metrics?: { label: string; value: string }[];
   testimonial?: {
     quote: string;
     name: string;
@@ -253,6 +264,7 @@ export interface CaseStudy {
     image?: string;
   };
   image: string;
+  externalUrl?: string;
   featured?: boolean;
 }
 

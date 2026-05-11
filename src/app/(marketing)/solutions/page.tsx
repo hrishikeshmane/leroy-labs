@@ -4,12 +4,11 @@ import { SectionHeader } from "@/components/section-header";
 import { solutionsConfig } from "@/lib/config/solutions";
 import { Check, ArrowRight, X } from "lucide-react";
 import Link from "next/link";
-import { Icons } from "@/components/icons";
-
 export const metadata: Metadata = {
   title: "Solutions & Approach",
   description:
-    "AI solutions built for your industry with our forward-deployed engineering approach. See how we work and what we deliver.",
+    "Custom software, automation, and AI integration built for fintech, healthcare, e-commerce, and SaaS — shipped by a forward-deployed engineering team.",
+  alternates: { canonical: "/solutions" },
 };
 
 export default function SolutionsPage() {
@@ -76,47 +75,6 @@ export default function SolutionsPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Compliance Section */}
-      <section className="flex flex-col items-center justify-center gap-8 w-full p-14 bg-accent z-20">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-medium tracking-tighter text-center text-balance mb-3">
-            Enterprise-Ready Across All Industries
-          </h2>
-          <p className="text-muted-foreground text-center text-balance font-medium mb-10">
-            Our solutions meet the highest security and compliance standards
-          </p>
-          <div className="flex items-center justify-center gap-8 flex-wrap">
-            <div className="flex flex-col items-center gap-2">
-              <div className="dark:hidden">
-                <Icons.soc2 className="size-16" />
-              </div>
-              <div className="hidden dark:block">
-                <Icons.soc2Dark className="size-16" />
-              </div>
-              <span className="text-sm font-medium text-primary">SOC 2 Type II</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="dark:hidden">
-                <Icons.hipaa className="size-16" />
-              </div>
-              <div className="hidden dark:block">
-                <Icons.hipaaDark className="size-16" />
-              </div>
-              <span className="text-sm font-medium text-primary">HIPAA Ready</span>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="dark:hidden">
-                <Icons.gdpr className="size-16" />
-              </div>
-              <div className="hidden dark:block">
-                <Icons.gdprDark className="size-16" />
-              </div>
-              <span className="text-sm font-medium text-primary">GDPR Compliant</span>
-            </div>
           </div>
         </div>
       </section>
@@ -259,7 +217,7 @@ export default function SolutionsPage() {
 
       <SectionCTA
         title="Ready to Get Started?"
-        description="See firsthand how our forward-deployed approach accelerates AI delivery for your industry."
+        description="See firsthand how our forward-deployed approach accelerates delivery for your industry."
         primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
         secondaryButton={{ text: "View Case Studies", href: "/case-studies" }}
         variant="accent"

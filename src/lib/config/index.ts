@@ -17,16 +17,20 @@ import { navigationConfig, footerLinks } from "./navigation";
 export const siteConfig = {
   name: "Leroy Labs",
   description:
-    "AI-native software engineering and forward-deployed automation teams.",
+    "Leroy Labs is a software studio that builds custom products, automates business workflows, and integrates AI where it creates real leverage.",
   cta: "Book a Call",
   url: process.env.NEXT_PUBLIC_APP_URL || "https://leroylabs.io",
   keywords: [
-    "AI Software Development",
+    "Software Consultancy",
+    "Custom Software Development",
+    "Business Automation",
+    "Workflow Automation",
+    "AI Integration",
     "AI Agents",
-    "Custom Automation",
-    "Forward Deployment",
-    "AI-Native Products",
-    "Agentic Workflows",
+    "Web App Development",
+    "Mobile App Development",
+    "System Integration",
+    "Forward-Deployed Engineering",
   ],
   links: {
     email: "hi@leroylabs.io",
@@ -39,6 +43,7 @@ export const siteConfig = {
   companyShowcase: {
     companyLogos: homeConfig.companyLogos,
   },
+  ourWork: homeConfig.ourWork,
   featureSection: homeConfig.featureSection,
   bentoSection: homeConfig.bentoSection,
   benefits: homeConfig.benefits,

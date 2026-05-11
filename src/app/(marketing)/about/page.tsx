@@ -9,7 +9,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Leroy Labs is a team of elite engineers and researchers building AI that actually works. Learn about our story, values, and team.",
+    "Leroy Labs is a forward-deployed software studio. Senior engineers from top tech companies shipping custom software, automation, and AI integration for our clients.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

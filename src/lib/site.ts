@@ -1,7 +1,9 @@
 export const siteConfig = {
   name: "Leroy Labs",
   url: "https://leroylabs.io",
-  description: "AI-native software engineering. We build products with intelligence built in, and deploy elite engineers to automate your business.",
+  description:
+    "Leroy Labs is a software studio that builds custom products, automates business workflows, and integrates AI where it creates real leverage.",
+  tagline: "Custom Software · Business Automation · AI Integration",
   links: {
     twitter: "https://x.com/leroylabs",
     github: "https://github.com/leroylabs",

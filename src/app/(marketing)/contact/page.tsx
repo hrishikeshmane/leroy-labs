@@ -8,7 +8,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Book a discovery call to discuss how AI can transform your business. 30-minute conversation to explore your challenges and opportunities.",
+    "Book a discovery call with Leroy Labs. 30-minute conversation to scope software, automation, or AI work for your business.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

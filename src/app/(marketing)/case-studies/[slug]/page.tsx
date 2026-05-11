@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { caseStudiesConfig } from "@/lib/config/case-studies";
 import { SectionCTA } from "@/components/sections/shared";
+import { JsonLd } from "@/components/json-ld";
+import { caseStudySchema, breadcrumbSchema } from "@/lib/schema";
+import { siteConfig } from "@/lib/site";
 import { ArrowLeft, Check, Quote, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -31,6 +34,13 @@ export async function generateMetadata({
   return {
     title: study.title,
     description: study.summary,
+    alternates: { canonical: `/case-studies/${study.slug}` },
+    openGraph: {
+      title: study.title,
+      description: study.summary,
+      url: `${siteConfig.url}/case-studies/${study.slug}`,
+      images: [study.image.startsWith("http") ? study.image : `${siteConfig.url}${study.image}`],
+    },
   };
 }
 
@@ -49,6 +59,22 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
   return (
     <main className="flex flex-col items-center justify-center divide-y divide-border min-h-screen w-full">
+      <JsonLd
+        data={caseStudySchema({
+          title: study.title,
+          summary: study.summary,
+          url: `${siteConfig.url}/case-studies/${study.slug}`,
+          image: study.image,
+          client: study.client,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: siteConfig.url },
+          { name: "Case Studies", url: `${siteConfig.url}/case-studies` },
+          { name: study.title, url: `${siteConfig.url}/case-studies/${study.slug}` },
+        ])}
+      />
       {/* Header with radial gradient */}
       <section className="w-full relative">
         <div className="relative flex flex-col items-center w-full px-6">
@@ -69,9 +95,21 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <span className="px-3 py-1 rounded-full bg-secondary text-white text-xs font-medium">
                 {study.industry}
               </span>
-              <span className="px-3 py-1 rounded-full bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] border border-border text-xs font-medium">
-                {study.duration}
-              </span>
+              {study.duration && (
+                <span className="px-3 py-1 rounded-full bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] border border-border text-xs font-medium">
+                  {study.duration}
+                </span>
+              )}
+              {study.externalUrl && (
+                <a
+                  href={study.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-1 rounded-full bg-[#F3F4F6] dark:bg-[#F9FAFB]/[0.02] border border-border text-xs font-medium hover:bg-secondary hover:text-white transition-colors"
+                >
+                  Visit {new URL(study.externalUrl).hostname.replace(/^www\./, "")} ↗
+                </a>
+              )}
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter text-balance mb-4">
@@ -83,18 +121,20 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </p>
 
             {/* Metrics Bar */}
-            <div className="flex flex-wrap gap-8 md:gap-12">
-              {study.metrics.map((metric, i) => (
-                <div key={i}>
-                  <div className="text-3xl md:text-4xl font-semibold text-secondary tracking-tighter">
-                    {metric.value}
+            {study.metrics && study.metrics.length > 0 && (
+              <div className="flex flex-wrap gap-8 md:gap-12">
+                {study.metrics.map((metric, i) => (
+                  <div key={i}>
+                    <div className="text-3xl md:text-4xl font-semibold text-secondary tracking-tighter">
+                      {metric.value}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {metric.label}
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">
-                    {metric.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -117,43 +157,66 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="absolute top-0 -right-4 md:-right-14 h-full w-4 md:w-14 text-primary/5 bg-[size:10px_10px] [background-image:repeating-linear-gradient(315deg,currentColor_0_1px,#0000_0_50%)]"></div>
 
           <div className="max-w-3xl mx-auto p-10 md:p-14 space-y-12">
-            {/* The Challenge */}
-            <div>
-              <h2 className="text-2xl font-medium tracking-tighter text-primary mb-4">
-                The Challenge
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {study.challenge}
-              </p>
-            </div>
+            {study.challenge && (
+              <div>
+                <h2 className="text-2xl font-medium tracking-tighter text-primary mb-4">
+                  The Challenge
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {study.challenge}
+                </p>
+              </div>
+            )}
 
-            {/* The Solution */}
-            <div>
-              <h2 className="text-2xl font-medium tracking-tighter text-primary mb-4">
-                Our Solution
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {study.solution}
-              </p>
-            </div>
+            {study.solution && (
+              <div>
+                <h2 className="text-2xl font-medium tracking-tighter text-primary mb-4">
+                  Our Solution
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {study.solution}
+                </p>
+              </div>
+            )}
 
-            {/* Results */}
-            <div>
-              <h2 className="text-2xl font-medium tracking-tighter text-primary mb-4">
-                The Results
-              </h2>
-              <ul className="space-y-3">
-                {study.results.map((result, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-3 text-muted-foreground"
-                  >
-                    <Check className="size-5 text-secondary shrink-0 mt-0.5" />
-                    <span>{result}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {study.results && study.results.length > 0 && (
+              <div>
+                <h2 className="text-2xl font-medium tracking-tighter text-primary mb-4">
+                  The Results
+                </h2>
+                <ul className="space-y-3">
+                  {study.results.map((result, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-muted-foreground"
+                    >
+                      <Check className="size-5 text-secondary shrink-0 mt-0.5" />
+                      <span>{result}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {study.externalUrl && (
+              <div>
+                <h2 className="text-2xl font-medium tracking-tighter text-primary mb-4">
+                  See it live
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  This project is in production today. Click through to see what we shipped.
+                </p>
+                <a
+                  href={study.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 h-10 px-6 rounded-full bg-secondary text-white text-sm font-medium hover:bg-secondary/80 transition-colors"
+                >
+                  Visit {new URL(study.externalUrl).hostname.replace(/^www\./, "")}
+                  <ArrowRight className="size-4" />
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -235,10 +298,10 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       )}
 
       <SectionCTA
-        title="Ready for Similar Results?"
-        description="Let's discuss how we can help transform your business with AI."
+        title="Ready to ship something like this?"
+        description="Let's talk about what would move your business — a product, an automation, an AI feature, or all three."
         primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
-        secondaryButton={{ text: "View More Case Studies", href: "/case-studies" }}
+        secondaryButton={{ text: "View More Work", href: "/case-studies" }}
         variant="accent"
       />
     </main>

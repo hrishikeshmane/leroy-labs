@@ -8,7 +8,8 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join Leroy Labs. We're hiring elite engineers to build AI that actually ships — forward-deployed, embedded with clients, shipping real production code.",
+    "Join Leroy Labs. We're hiring senior engineers — forward-deployed, embedded with clients, shipping real production software, automation, and AI integrations.",
+  alternates: { canonical: "/careers" },
 };
 
 export default function CareersPage() {
