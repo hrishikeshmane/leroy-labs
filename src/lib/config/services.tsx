@@ -15,7 +15,7 @@ export const servicesHero: PageHeroConfig = {
     "From greenfield products to gnarly legacy automations to AI features that earn their keep, our engineers embed with your team and ship production code.",
   variant: "centered",
   cta: {
-    primary: { text: "Book a Call", href: "/contact" },
+    primary: { text: "Book a Call", href: "https://calendly.com/hi-leroylabs/30min" },
     secondary: { text: "View Case Studies", href: "/case-studies" },
   },
 };
@@ -133,7 +133,7 @@ export const engagementModels: PricingItem[] = [
   },
   {
     name: "Embedded",
-    href: "/contact",
+    href: "https://calendly.com/hi-leroylabs/30min",
     price: "Custom",
     period: "month",
     yearlyPrice: "Custom",

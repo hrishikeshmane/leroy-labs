@@ -218,7 +218,7 @@ export default function SolutionsPage() {
       <SectionCTA
         title="Ready to Get Started?"
         description="See firsthand how our forward-deployed approach accelerates delivery for your industry."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
         secondaryButton={{ text: "View Case Studies", href: "/case-studies" }}
         variant="accent"
       />

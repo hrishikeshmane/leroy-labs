@@ -144,7 +144,7 @@ export default function CaseStudiesPage() {
       <SectionCTA
         title="Ready to Be Our Next Client?"
         description="Let's talk about the software, automation, or AI work that would move your business."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
       />
     </main>
   );

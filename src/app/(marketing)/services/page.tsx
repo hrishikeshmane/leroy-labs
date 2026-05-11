@@ -102,7 +102,7 @@ export default function ServicesPage() {
       <SectionCTA
         title="Ready to Build Something?"
         description="Let's talk about the software, automation, or AI work that would move your business."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
         secondaryButton={{ text: "View Case Studies", href: "/case-studies" }}
         variant="accent"
       />

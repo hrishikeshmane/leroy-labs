@@ -33,6 +33,6 @@ export const navigationConfig = {
   links: navLinks,
   cta: {
     text: "Book a Call",
-    href: "/contact",
+    href: "https://calendly.com/hi-leroylabs/30min",
   },
 };

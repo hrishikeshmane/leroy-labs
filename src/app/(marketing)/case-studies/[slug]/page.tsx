@@ -300,7 +300,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <SectionCTA
         title="Ready to ship something like this?"
         description="Let's talk about what would move your business — a product, an automation, an AI feature, or all three."
-        primaryButton={{ text: "Book a Discovery Call", href: "/contact" }}
+        primaryButton={{ text: "Book a Discovery Call", href: "https://calendly.com/hi-leroylabs/30min" }}
         secondaryButton={{ text: "View More Work", href: "/case-studies" }}
         variant="accent"
       />

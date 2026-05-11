@@ -7,13 +7,13 @@ export const contactHero: PageHeroConfig = {
     "Ready to ship a product, automate a workflow, or integrate AI where it matters? Book a discovery call and we'll dig into what would move your business.",
   variant: "centered",
   cta: {
-    primary: { text: "Book a Call", href: "https://cal.com/leroylabs" },
+    primary: { text: "Book a Call", href: "https://calendly.com/hi-leroylabs/30min" },
   },
 };
 
 export const contactInfo = {
   email: "hi@leroylabs.io",
-  calendlyLink: "https://cal.com/leroylabs",
+  calendlyLink: "https://calendly.com/hi-leroylabs/30min",
 };
 
 export const contactProcessSteps = [
